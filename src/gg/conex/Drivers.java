@@ -23,7 +23,7 @@ public class Drivers {
     Connection con;
    
     public Drivers(TipoConexion tipoConexion,DatosBD datosBD) {
-        if(datosBD == null || !datosBD.valido()){
+        if(datosBD == null || (!datosBD.valido() && tipoConexion != TipoConexion.ODBC)){
             throw new NullPointerException();
         }
         switch (tipoConexion) {
