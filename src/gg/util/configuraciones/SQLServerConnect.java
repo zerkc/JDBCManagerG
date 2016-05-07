@@ -15,7 +15,6 @@ import gg.util.interfaces.Connect;
 public class SQLServerConnect extends Connect{
 
     public SQLServerConnect(DatosBD datosBD) {
-        //jdbc:sqlserver://VM-QA-MARCHIVO\:1433;databaseName=dbmArchivo
         super(datosBD, "jdbc:sqlserver", "com.microsoft.sqlserver.jdbc.SQLServerDriver", "%s://%s\\:%s;databaseName=%s");
     }
     

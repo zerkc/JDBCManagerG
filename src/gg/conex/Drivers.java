@@ -41,6 +41,10 @@ public class Drivers {
         
     }
     
+    public Drivers(TipoConexion tipoConexion,String host,String bd,String user,String pass,String puerto) {
+       this(tipoConexion, new DatosBD(host, bd, user, pass, puerto));
+    }
+    
    public Connection getCon(){
        return connect.getCon();
    }

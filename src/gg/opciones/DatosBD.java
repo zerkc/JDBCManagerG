@@ -75,10 +75,7 @@ public class DatosBD {
     }
     
     private boolean datosValido(String datos){
-        if(datos == null || datos.isEmpty()){
-            return false;
-        }
-        return true;
+        return !(datos == null || datos.isEmpty());
     }
     
 }

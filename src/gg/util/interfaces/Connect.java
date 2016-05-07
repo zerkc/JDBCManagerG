@@ -6,7 +6,6 @@
 package gg.util.interfaces;
 
 import gg.opciones.DatosBD;
-import gg.util.listas.TipoVariableSQL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -45,7 +44,4 @@ public abstract class Connect {
         return connection;
     }
     
-    public String getTipo(TipoVariableSQL tipoVariableSQL){
-        throw new NullPointerException();
-    }
 }
