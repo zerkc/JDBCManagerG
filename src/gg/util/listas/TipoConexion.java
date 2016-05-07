@@ -12,7 +12,8 @@ package gg.util.listas;
 public enum TipoConexion {
     MYSQL,
     POSTGRES,
-    SQLSERVER;
+    SQLSERVER,
+    ODBC;
     
     /**
      *

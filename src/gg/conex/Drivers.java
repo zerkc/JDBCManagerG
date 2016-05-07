@@ -7,6 +7,7 @@ package gg.conex;
 
 import gg.opciones.DatosBD;
 import gg.util.configuraciones.MYSqlConnect;
+import gg.util.configuraciones.ODBCConnect;
 import gg.util.configuraciones.PostgresConnect;
 import gg.util.configuraciones.SQLServerConnect;
 import gg.util.interfaces.Connect;
@@ -34,6 +35,9 @@ public class Drivers {
                 break;
             case SQLSERVER:
                 connect = new SQLServerConnect(datosBD);
+                break;
+            case ODBC:
+                connect = new ODBCConnect(datosBD);
                 break;
             default:
                 throw new AssertionError();
