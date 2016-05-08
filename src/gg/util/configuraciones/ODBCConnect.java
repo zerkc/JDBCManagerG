@@ -17,5 +17,10 @@ public class ODBCConnect extends Connect{
     public ODBCConnect(DatosBD datosBD) {
         super(datosBD, "jdbc:odbc", "sun.jdbc.odbc.JdbcOdbcDriver", "jdbc:odbc:%s%s%s%s");
     }
+
+    public ODBCConnect(DatosBD datosBD, String formato) {
+        super(datosBD, "jdbc:odbc", "sun.jdbc.odbc.JdbcOdbcDriver", formato);
+    }
+    
     
 }

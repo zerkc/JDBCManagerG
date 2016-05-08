@@ -13,17 +13,18 @@ import gg.util.configuraciones.SQLServerConnect;
 import gg.util.interfaces.Connect;
 import gg.util.listas.TipoConexion;
 import java.sql.Connection;
+
 /**
  *
  * @author clases
  */
 public class Drivers {
-    
+
     Connect connect;
     Connection con;
-   
-    public Drivers(TipoConexion tipoConexion,DatosBD datosBD) {
-        if(datosBD == null || (!datosBD.valido() && tipoConexion != TipoConexion.ODBC)){
+
+    public Drivers(TipoConexion tipoConexion, DatosBD datosBD) {
+        if (datosBD == null || (!datosBD.valido() && tipoConexion != TipoConexion.ODBC)) {
             throw new NullPointerException();
         }
         switch (tipoConexion) {
@@ -37,24 +38,41 @@ public class Drivers {
                 connect = new SQLServerConnect(datosBD);
                 break;
             case ODBC:
-                connect = new ODBCConnect(datosBD);
+                if (!valido(datosBD.getUser()) && !valido(datosBD.getPass())) {
+                    connect = new ODBCConnect(datosBD);
+                } else {
+                    String formato = "jdbc:odbc:%s%s%s%s; "+getFormatValido("Uid", datosBD.getUser())+" "+getFormatValido("Pwd", datosBD.getPass());
+                    connect = new ODBCConnect(datosBD,formato);
+                }
                 break;
             default:
                 throw new AssertionError();
         }
+
+    }
+
+    public Drivers(TipoConexion tipoConexion, String host, String bd, String user, String pass, String puerto) {
+        this(tipoConexion, new DatosBD(host, bd, user, pass, puerto));
+    }
+
+    public Connection getCon() {
+        return connect.getCon();
+    }
+
+    public void ejecutarSQL() {
+
+    }
+
+    public boolean valido(String valor) {
+        return valor != null && !valor.isEmpty() && valor.trim().isEmpty();
+    }
+    
+    public String getFormatValido(String pre,String valor){
+        if(valido(valor)){
+            return pre+"="+valor+";";
+        }
         
+        return "";
     }
-    
-    public Drivers(TipoConexion tipoConexion,String host,String bd,String user,String pass,String puerto) {
-       this(tipoConexion, new DatosBD(host, bd, user, pass, puerto));
-    }
-    
-   public Connection getCon(){
-       return connect.getCon();
-   }
-   
-   public void ejecutarSQL(){
-       
-   }
-   
+
 }
