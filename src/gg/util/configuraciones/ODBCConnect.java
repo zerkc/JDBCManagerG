@@ -14,10 +14,19 @@ import gg.util.interfaces.Connect;
  */
 public class ODBCConnect extends Connect{
     
+    /**
+     *
+     * @param datosBD datos de conexion
+     */
     public ODBCConnect(DatosBD datosBD) {
         super(datosBD, "jdbc:odbc", "sun.jdbc.odbc.JdbcOdbcDriver", "jdbc:odbc:%s%s%s%s");
     }
 
+    /**
+     * 
+     * @param datosBD datos de conexion
+     * @param formato nuevo formato de conexion
+     */
     public ODBCConnect(DatosBD datosBD, String formato) {
         super(datosBD, "jdbc:odbc", "sun.jdbc.odbc.JdbcOdbcDriver", formato);
     }

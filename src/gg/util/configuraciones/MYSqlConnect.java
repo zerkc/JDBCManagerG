@@ -10,10 +10,14 @@ import gg.util.interfaces.Connect;
 
 /**
  *
- * @author clases
+ * @author gustavog
  */
 public class MYSqlConnect extends Connect{
 
+    /**
+     * 
+     * @param datosBD datos de conexion
+     */
     public MYSqlConnect(DatosBD datosBD) {
         super(datosBD, "jdbc:mysql","com.mysql.jdbc.Driver","%s://%s:%s/%s");
     }

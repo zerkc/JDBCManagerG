@@ -7,9 +7,9 @@ package gg.util.listas;
 
 /**
  *
- * @author clases
+ * @author gustavog
  */
-public enum TipoConexion {
+public enum TipoConexionSQL {
     MYSQL,
     POSTGRES,
     SQLSERVER,
@@ -20,9 +20,9 @@ public enum TipoConexion {
      * @param valor
      * @return
      */
-    public static TipoConexion getValor(String valor){
-        TipoConexion[] valores = TipoConexion.values();
-        for (TipoConexion valore : valores) {
+    public static TipoConexionSQL getValor(String valor){
+        TipoConexionSQL[] valores = TipoConexionSQL.values();
+        for (TipoConexionSQL valore : valores) {
             if(valor.equals(valore.name())){
                 return valore;
             }

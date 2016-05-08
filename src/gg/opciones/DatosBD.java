@@ -7,7 +7,7 @@ package gg.opciones;
 
 /**
  *
- * @author clases
+ * @author gustavog
  */
 public class DatosBD {
     private  String host;

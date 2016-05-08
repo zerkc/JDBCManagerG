@@ -10,10 +10,14 @@ import gg.util.interfaces.Connect;
 
 /**
  *
- * @author GustavoG
+ * @author gustavog
  */
 public class SQLServerConnect extends Connect{
 
+    /**
+     * 
+     * @param datosBD datos de conexion
+     */
     public SQLServerConnect(DatosBD datosBD) {
         super(datosBD, "jdbc:sqlserver", "com.microsoft.sqlserver.jdbc.SQLServerDriver", "%s://%s\\:%s;databaseName=%s");
     }

@@ -10,10 +10,14 @@ import gg.util.interfaces.Connect;
 
 /**
  *
- * @author GustavoG
+ * @author gustavog
  */
 public class PostgresConnect extends Connect {
 
+    /**
+     * 
+     * @param datosBD datos de conexion
+     */
     public PostgresConnect(DatosBD datosBD) {
         super(datosBD, "jdbc:postgresql", "org.postgresql.Driver", "%s://%s:%s/%s");
     }
