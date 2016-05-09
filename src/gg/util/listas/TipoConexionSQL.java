@@ -7,7 +7,7 @@ package gg.util.listas;
 
 /**
  *
- * @author gustavog
+ * @author
  */
 public enum TipoConexionSQL {
     MYSQL,

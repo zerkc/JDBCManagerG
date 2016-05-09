@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author gustavog
+ * @author
  */
 public abstract class Connect {
 

@@ -10,7 +10,7 @@ import gg.util.interfaces.Connect;
 
 /**
  *
- * @author gustavog
+ * @author
  */
 public class PostgresConnect extends Connect {
 
